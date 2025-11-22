@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <form id="name-form">
+        <input type="text" id="name" name="name" placeholder="Name">
+        <select id="gender" name="gender">
+            <option value="both">Both</option>
+            <option value="boy">Boys</option>
+            <option value="girl">Girls</option>
+        </select>
+        <button type="submit">Plot</button>
+    </form>
+    <div id="results"></div>
+    <script>
+    $('#name-form').on('submit', function(e) {
+        e.preventDefault();
+        $.get('/names', {
+            name: $('#name').val(),
+            gender: $('#gender').val()
+        }, function(data) {
+            // Clear the results div
+            $('#results').empty();
+            // Add the new results to the div
+            data.forEach(function(row) {
+                $('#results').append('<p>' + row.name + '</p>');
+            });
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "hconcat": [{"layer": [{"mark": {"type": "line", "color": "blue"}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "adm_per_male", "format": ",", "title": "Admissions per 100,000 Male", "type": "quantitative"}], "x": {"field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "adm_per_male", "title": "Admissions per 100,000 population", "type": "quantitative"}}}, {"mark": {"type": "line", "color": "orange"}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "adm_per_female", "format": ",", "type": "quantitative"}], "x": {"field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "adm_per_female", "type": "quantitative"}}}], "title": "Admissions per 100,000 by Gender from 2015 to 2019", "width": 200}, {"layer": [{"mark": {"type": "line", "color": "blue", "point": true}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "adm_per_male_rebased", "format": ",", "type": "quantitative"}], "x": {"field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "adm_per_male_rebased", "title": "Rebased Admissions per 100,000 population", "type": "quantitative"}}}, {"mark": {"type": "line", "color": "orange", "point": true}, "encoding": {"tooltip": [{"field": "year", "title": "Year", "type": "ordinal"}, {"field": "adm_per_female_rebased", "format": ",", "title": "Rebased Admissions per 100,000 Female", "type": "quantitative"}], "x": {"field": "year", "title": "Year", "type": "ordinal"}, "y": {"field": "adm_per_female_rebased", "type": "quantitative"}}}], "title": "Rebased Admissions per 100,000 by gender from 2015 to 2019", "width": 200}], "data": {"name": "data-aa05c01168918a1ab4176344c3fb7db7"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"data-aa05c01168918a1ab4176344c3fb7db7": [{"Unnamed: 0": 5, "region": "England", "admissions_total": 365577, "admissions_count_men": "123423", "admissions_count_women": "242118", "adm_per_100_000_all": "678.6808784502424", "adm_per_male": 465.1509165477656, "adm_per_female": 885.84569912726, "year": 2015, "region_flag": "England", "major_region": "England", "adm_per_male_rebased": 100.0, "adm_per_female_rebased": 100.0}, {"Unnamed: 0": 6, "region": "England", "admissions_total": 440288, "admissions_count_men": "149490", "admissions_count_women": "290747", "adm_per_100_000_all": "810.5953872164869", "adm_per_male": 558.3569477472918, "adm_per_female": 1055.5950527861062, "year": 2016, "region_flag": "England", "major_region": "England", "adm_per_male_rebased": 120.03780448102268, "adm_per_female_rebased": 119.16240648073182}, {"Unnamed: 0": 9, "region": "England", "admissions_total": 524725, "admissions_count_men": "175401", "admissions_count_women": "349279", "adm_per_100_000_all": "995", "adm_per_male": 710.0, "adm_per_female": 1281.0, "year": 2017, "region_flag": "England", "major_region": "England", "adm_per_male_rebased": 152.63863291282826, "adm_per_female_rebased": 144.6075768344361}, {"Unnamed: 0": 11, "region": "England", "admissions_total": 616961, "admissions_count_men": "208290", "admissions_count_women": "408630", "adm_per_100_000_all": "1159", "adm_per_male": 833.0, "adm_per_female": 1486.0, "year": 2018, "region_flag": "England", "major_region": "England", "adm_per_male_rebased": 179.08166368505061, "adm_per_female_rebased": 167.74930458701954}, {"Unnamed: 0": 11, "region": "England", "admissions_total": 710562, "admissions_count_men": "243565", "admissions_count_women": "466978", "adm_per_100_000_all": "1322.8", "adm_per_male": 963.1, "adm_per_female": 1685.2, "year": 2019, "region_flag": "England", "major_region": "England", "adm_per_male_rebased": 207.05108078640126, "adm_per_female_rebased": 190.23629077392016}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

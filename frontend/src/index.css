@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-base text-text-main font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Bridget Riley Inspired Pattern (Green on Green) */
+.pattern-riley {
+  background-color: #4A7C59;
+  /* brand-sage */
+  background-image: radial-gradient(#D8F1A0 2px, transparent 2px);
+  /* brand-lime circles */
+  background-size: 20px 20px;
+}
+
+/* Botanical Pattern (Optional usage) */
+.bg-pattern-botanical {
+  background-color: #F0F4EF;
+  background-image: radial-gradient(#4A7C59 1.5px, transparent 1.5px), radial-gradient(#4A7C59 1.5px, #F0F4EF 1.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* 3D Transform Utilities (Missing in Tailwind v3 default) */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
