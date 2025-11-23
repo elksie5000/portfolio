@@ -44,7 +44,8 @@ const CrimeMap = () => {
     return (
         <div className="w-full h-full min-h-[600px] bg-bg-base relative z-0 group">
             {/* Map Controls - Absolute positioned on top */}
-            <div className="absolute top-4 right-4 z-[1000] bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-brand-sage/20 max-w-xs">
+            {/* Map Controls - Absolute positioned on top */}
+            <div className="absolute top-4 right-4 z-[9999] bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-brand-sage/20 max-w-xs">
                 <label htmlFor="crime-select" className="block text-sm font-bold text-brand-sage mb-2">
                     Filter by Crime Type
                 </label>
@@ -83,7 +84,7 @@ const CrimeMap = () => {
                             fillColor: point.original_color,
                             fillOpacity: 0.6,
                             weight: 1,
-                            radius: 5 // Fixed pixel radius for visibility at all zoom levels
+                            radius: 8 // Fixed pixel radius for visibility at all zoom levels
                         }}
                     >
                         <Popup className="botanical-popup">
