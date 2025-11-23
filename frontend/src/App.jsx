@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-bg-base text-text-main font-sans selection:bg-brand-lime selection:text-text-main">
         <Navbar />
-        <main className="pt-20">
+        <main className="pt-20 w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<PortfolioGrid />} />
