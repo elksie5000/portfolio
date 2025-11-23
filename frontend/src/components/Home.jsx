@@ -2,6 +2,9 @@ import React from 'react';
 import WarDeadMap from './WarDeadMap';
 import DataPanels from './DataPanels';
 import CrimeMap from './CrimeMap';
+import SexesLineChart from './SexesLineChart';
+import SexesDonutChart from './SexesDonutChart';
+import RegionsChart from './RegionsChart';
 
 const Home = () => {
     return (
@@ -93,6 +96,29 @@ const Home = () => {
                 <p className="text-text-main/80">I have made extensive use of the crime statistics released by the Home Office both to provide snapshots of crime across North Staffordshire, as well as visualising trends over time (see below for August 2014). This map has a selector so it is possible to find out what crimes happen where.</p>
                 <div className="w-full h-[600px] rounded-lg overflow-hidden border border-brand-sage/20 shadow-lg">
                     <CrimeMap />
+                </div>
+            </section>
+
+            {/* Health Data */}
+            <section className="space-y-4">
+                <h2 className="text-2xl font-bold text-text-main">Health Data</h2>
+                <p className="text-text-main/80">Analysis of hospital admissions data, exploring trends by gender and region.</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                        <h3 className="text-lg font-semibold text-text-main">Admissions by Gender</h3>
+                        <SexesLineChart />
+                    </div>
+                    <div className="space-y-2">
+                        <h3 className="text-lg font-semibold text-text-main">Gender Split</h3>
+                        <SexesDonutChart />
+                    </div>
+                </div>
+
+                <div className="space-y-2 mt-6">
+                    <h3 className="text-lg font-semibold text-text-main">Regional Analysis</h3>
+                    <p className="text-sm text-text-main/70">Obesity-related hospital admissions across England regions.</p>
+                    <RegionsChart />
                 </div>
             </section>
 

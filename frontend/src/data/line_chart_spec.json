@@ -1,0 +1,148 @@
+{
+  "config": {
+    "view": {
+      "continuousWidth": 300,
+      "continuousHeight": 300
+    }
+  },
+  "hconcat": [
+    {
+      "layer": [
+        {
+          "mark": {
+            "type": "line",
+            "color": "blue"
+          },
+          "encoding": {
+            "tooltip": [
+              {
+                "field": "year",
+                "title": "Year",
+                "type": "ordinal"
+              },
+              {
+                "field": "adm_per_male",
+                "format": ",",
+                "title": "Admissions per 100,000 Male",
+                "type": "quantitative"
+              }
+            ],
+            "x": {
+              "field": "year",
+              "title": "Year",
+              "type": "ordinal"
+            },
+            "y": {
+              "field": "adm_per_male",
+              "title": "Admissions per 100,000 population",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "color": "orange"
+          },
+          "encoding": {
+            "tooltip": [
+              {
+                "field": "year",
+                "title": "Year",
+                "type": "ordinal"
+              },
+              {
+                "field": "adm_per_female",
+                "format": ",",
+                "type": "quantitative"
+              }
+            ],
+            "x": {
+              "field": "year",
+              "title": "Year",
+              "type": "ordinal"
+            },
+            "y": {
+              "field": "adm_per_female",
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "title": "Admissions per 100,000 by Gender from 2015 to 2019",
+      "width": 200
+    },
+    {
+      "layer": [
+        {
+          "mark": {
+            "type": "line",
+            "color": "blue",
+            "point": true
+          },
+          "encoding": {
+            "tooltip": [
+              {
+                "field": "year",
+                "title": "Year",
+                "type": "ordinal"
+              },
+              {
+                "field": "adm_per_male_rebased",
+                "format": ",",
+                "type": "quantitative"
+              }
+            ],
+            "x": {
+              "field": "year",
+              "title": "Year",
+              "type": "ordinal"
+            },
+            "y": {
+              "field": "adm_per_male_rebased",
+              "title": "Rebased Admissions per 100,000 population",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "color": "orange",
+            "point": true
+          },
+          "encoding": {
+            "tooltip": [
+              {
+                "field": "year",
+                "title": "Year",
+                "type": "ordinal"
+              },
+              {
+                "field": "adm_per_female_rebased",
+                "format": ",",
+                "title": "Rebased Admissions per 100,000 Female",
+                "type": "quantitative"
+              }
+            ],
+            "x": {
+              "field": "year",
+              "title": "Year",
+              "type": "ordinal"
+            },
+            "y": {
+              "field": "adm_per_female_rebased",
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "title": "Rebased Admissions per 100,000 by gender from 2015 to 2019",
+      "width": 200
+    }
+  ],
+  "data": {
+    "name": "table"
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json"
+}

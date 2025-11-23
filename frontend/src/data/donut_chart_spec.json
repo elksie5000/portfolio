@@ -1,0 +1,47 @@
+{
+  "config": {
+    "view": {
+      "continuousWidth": 300,
+      "continuousHeight": 300
+    }
+  },
+  "data": {
+    "name": "table"
+  },
+  "mark": {
+    "type": "arc",
+    "innerRadius": 50
+  },
+  "encoding": {
+    "color": {
+      "field": "Gender",
+      "scale": {
+        "range": [
+          "#1f77b4",
+          "#ff7f0e"
+        ]
+      },
+      "type": "nominal"
+    },
+    "theta": {
+      "field": "Percentage",
+      "stack": true,
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "Gender",
+        "type": "nominal"
+      },
+      {
+        "field": "Percentage",
+        "format": ".2%",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "height": 150,
+  "title": "Total Proportion of Male vs Female Admissions from 2015-19",
+  "width": 300,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json"
+}

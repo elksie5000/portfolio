@@ -1,0 +1,168 @@
+{
+  "config": {
+    "view": {
+      "continuousWidth": 300,
+      "continuousHeight": 300
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line"
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "param_34",
+            "empty": false,
+            "field": "region",
+            "type": "nominal",
+            "legend": {
+              "title": "Region"
+            }
+          },
+          "value": "lightgray"
+        },
+        "opacity": {
+          "condition": {
+            "param": "param_34",
+            "value": 1,
+            "empty": false
+          },
+          "value": 0.4
+        },
+        "x": {
+          "axis": {
+            "format": "d"
+          },
+          "field": "year",
+          "title": "Year",
+          "type": "quantitative"
+        },
+        "y": {
+          "axis": {
+            "format": "~s"
+          },
+          "field": "adm_per_100_000_all",
+          "title": "Admissions per 100,000 population",
+          "type": "quantitative"
+        }
+      },
+      "name": "view_74"
+    },
+    {
+      "mark": {
+        "type": "circle"
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "param_34",
+            "empty": false,
+            "field": "region",
+            "type": "nominal"
+          },
+          "value": "lightgray"
+        },
+        "opacity": {
+          "condition": {
+            "param": "param_34",
+            "value": 1,
+            "empty": false
+          },
+          "value": 0.4
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region",
+            "type": "nominal"
+          },
+          {
+            "field": "year",
+            "format": "d",
+            "title": "Year",
+            "type": "quantitative"
+          },
+          {
+            "field": "adm_per_100_000_all",
+            "format": ",",
+            "title": "Admissions per 100,000 residents",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "format": "d"
+          },
+          "field": "year",
+          "title": "Year",
+          "type": "quantitative"
+        },
+        "y": {
+          "axis": {
+            "format": "~s"
+          },
+          "field": "adm_per_100_000_all",
+          "title": "Admissions per 100,000 population",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "data": {
+    "name": "table"
+  },
+  "height": 500,
+  "params": [
+    {
+      "name": "param_34",
+      "select": {
+        "type": "point",
+        "fields": [
+          "region"
+        ],
+        "on": "mouseover"
+      },
+      "views": [
+        "view_74"
+      ]
+    },
+    {
+      "name": " ",
+      "select": {
+        "type": "point",
+        "fields": [
+          "Region"
+        ]
+      },
+      "bind": {
+        "input": "select",
+        "options": [
+          "North East",
+          "North West",
+          "North Yorkshire",
+          "East Midlands",
+          "West Midlands",
+          "London",
+          "South East",
+          "West Sussex",
+          "South West"
+        ]
+      },
+      "views": [
+        "view_74"
+      ]
+    }
+  ],
+  "title": "Obesity-related hospital admissions between 2015 and 2019",
+  "transform": [
+    {
+      "filter": {
+        "param": " "
+      }
+    }
+  ],
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json"
+}
