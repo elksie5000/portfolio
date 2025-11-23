@@ -1,5 +1,5 @@
 import React from 'react';
-import { Vega } from 'react-vega';
+import { VegaEmbed } from 'react-vega';
 import panelsData from '../data/war_dead_panels.json';
 
 const DataPanels = () => {
@@ -14,7 +14,7 @@ const DataPanels = () => {
           `}
                 >
                     <div className="w-full h-full min-h-[300px]">
-                        <Vega spec={spec} className="w-full" />
+                        <VegaEmbed spec={spec} className="w-full" />
                     </div>
                 </div>
             ))}
