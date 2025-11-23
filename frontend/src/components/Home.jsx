@@ -1,4 +1,6 @@
 import React from 'react';
+import WarDeadMap from './WarDeadMap';
+import DataPanels from './DataPanels';
 
 const Home = () => {
     return (
@@ -54,14 +56,10 @@ const Home = () => {
                 <p className="text-text-main/80">The Commonwealth War Graves Commission provides free access to the records of thousands of service personnel who have lost their lives in conflict. This project, started in 2012, allowed readers to explore a map showing the final memorial for up to 13,000 casualties from the North and South Staffordshire Regiments.</p>
                 <p className="text-text-main/80">The final work involved significant effort to clean and visualise the data. By zooming in you can see larger circles, presented the memorials with the most casualties - showing the main front line of the war.</p>
 
-                <div className="grid gap-4">
-                    <div className="bg-gray-100 border border-brand-sage/20 rounded p-8 text-center text-brand-sage italic">
-                        [Placeholder: /templates/war_dead.html]
-                    </div>
-                    <div className="bg-gray-100 border border-brand-sage/20 rounded p-8 text-center text-brand-sage italic">
-                        [Placeholder: /templates/war_dead_panels.html]
-                    </div>
+                <div className="w-full h-[600px] rounded-lg overflow-hidden border border-brand-sage/20 shadow-lg mb-8">
+                    <WarDeadMap />
                 </div>
+                <DataPanels />
             </section>
 
             {/* Accident Statistics */}
