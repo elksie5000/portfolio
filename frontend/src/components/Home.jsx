@@ -1,6 +1,7 @@
 import React from 'react';
 import WarDeadMap from './WarDeadMap';
 import DataPanels from './DataPanels';
+import CrimeMap from './CrimeMap';
 
 const Home = () => {
     return (
@@ -90,8 +91,8 @@ const Home = () => {
             <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-text-main">Crime data</h2>
                 <p className="text-text-main/80">I have made extensive use of the crime statistics released by the Home Office both to provide snapshots of crime across North Staffordshire, as well as visualising trends over time (see below for August 2014). This map has a selector so it is possible to find out what crimes happen where.</p>
-                <div className="bg-gray-100 border border-brand-sage/20 rounded p-8 text-center text-brand-sage italic">
-                    [Placeholder: /templates/crime_map.html]
+                <div className="w-full h-[600px] rounded-lg overflow-hidden border border-brand-sage/20 shadow-lg">
+                    <CrimeMap />
                 </div>
             </section>
 
