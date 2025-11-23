@@ -45,8 +45,8 @@ const WarDeadMap = () => {
             key={index}
             center={point.coordinates}
             pathOptions={{
-              color: '#4A7C59', // brand-sage
-              fillColor: '#4A7C59',
+              color: '#FF3B30', // Bright red for warning/war dead
+              fillColor: '#FF3B30',
               fillOpacity: 0.6,
               weight: 1,
               radius: 5
