@@ -129,7 +129,7 @@
       ]
     },
     {
-      "name": " ",
+      "name": "RegionSelection",
       "select": {
         "type": "point",
         "fields": [
@@ -159,10 +159,10 @@
   "transform": [
     {
       "filter": {
-        "param": " "
+        "param": "RegionSelection"
       }
     }
   ],
-  "width": 600,
+  "width": "container",
   "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json"
 }
