@@ -31,14 +31,30 @@ const SexesLineChart = () => {
     // If the spec has a hardcoded data name, we need to match it.
     // My extractor set "data": {"name": "table"}
 
+    // Inject data directly into the spec to avoid potential react-vega data prop issues
+    const specWithData = {
+        ...spec,
+        data: { values: data }
+    };
+
+    console.log("Vega-Lite spec with data:", specWithData);
+    console.log("Data being passed:", data);
+
+    if (data.length === 0) {
+        return <div className="p-4">Loading data...</div>;
+    }
+
     return (
         <div className="w-full bg-white p-4 rounded-lg shadow-sm border border-brand-sage/20">
             <VegaEmbed
-                spec={spec}
-                data={{ table: data }}
+                spec={specWithData}
                 actions={false}
                 className="w-full"
             />
+            {/* Debug info */}
+            <div className="text-xs text-gray-400 mt-2">
+                Loaded {data.length} records.
+            </div>
         </div>
     );
 };

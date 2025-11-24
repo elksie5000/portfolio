@@ -35,14 +35,25 @@ const RegionsChart = () => {
         fetchData();
     }, []);
 
+    const specWithData = {
+        ...spec,
+        data: { values: data }
+    };
+
+    if (data.length === 0) {
+        return <div className="p-4">Loading data...</div>;
+    }
+
     return (
         <div className="w-full bg-white p-4 rounded-lg shadow-sm border border-brand-sage/20 overflow-hidden">
             <VegaEmbed
-                spec={spec}
-                data={{ table: data }}
+                spec={specWithData}
                 actions={false}
                 className="w-full"
             />
+            <div className="text-xs text-gray-400 mt-2">
+                Loaded {data.length} records.
+            </div>
         </div>
     );
 };
