@@ -5,6 +5,8 @@ import PortfolioGrid from './components/PortfolioGrid';
 import TarotLab from './components/TarotLab';
 import Home from './components/Home';
 
+import BabyNames from './components/BabyNames';
+
 function App() {
   return (
     <Router>
@@ -15,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<PortfolioGrid />} />
             <Route path="/lab" element={<TarotLab />} />
+            <Route path="/baby-names" element={<BabyNames />} />
             <Route path="/about" element={<Home />} />
           </Routes>
         </main>

@@ -31,6 +31,9 @@ const Navbar = () => {
                                 <Link to="/lab" className="hover:text-brand-sage transition-colors">[ Lab ]</Link>
                             </li>
                             <li>
+                                <Link to="/baby-names" className="hover:text-brand-sage transition-colors">[ Baby Names ]</Link>
+                            </li>
+                            <li>
                                 <Link to="/" className="hover:text-brand-sage transition-colors">[ About ]</Link>
                             </li>
                         </ul>
@@ -58,6 +61,15 @@ const Navbar = () => {
                                 onClick={toggleMenu}
                             >
                                 [ Lab ]
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/baby-names"
+                                className="block px-3 py-2 rounded-md hover:text-brand-sage hover:bg-brand-sage/10 transition-colors"
+                                onClick={toggleMenu}
+                            >
+                                [ Baby Names ]
                             </Link>
                         </li>
                         <li>
