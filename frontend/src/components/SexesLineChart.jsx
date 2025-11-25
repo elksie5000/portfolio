@@ -31,26 +31,48 @@ const SexesLineChart = () => {
     // If the spec has a hardcoded data name, we need to match it.
     // My extractor set "data": {"name": "table"}
 
-    // Inject data directly into the spec to avoid potential react-vega data prop issues
-    const specWithData = {
+    // Split the hconcat spec into two separate specs for vertical stacking
+    // This fits better in the grid column layout
+    const chart1Spec = {
         ...spec,
-        data: { values: data }
+        hconcat: undefined, // Remove hconcat
+        ...spec.hconcat[0], // Merge first chart props
+        data: { values: data },
+        width: "container",
+        height: 300,
+        config: spec.config // Preserve config
     };
 
-    console.log("Vega-Lite spec with data:", specWithData);
-    console.log("Data being passed:", data);
+    const chart2Spec = {
+        ...spec,
+        hconcat: undefined,
+        ...spec.hconcat[1], // Merge second chart props
+        data: { values: data },
+        width: "container",
+        height: 300,
+        config: spec.config
+    };
 
     if (data.length === 0) {
         return <div className="p-4">Loading data...</div>;
     }
 
     return (
-        <div className="w-full bg-white p-4 rounded-lg shadow-sm border border-brand-sage/20">
-            <VegaEmbed
-                spec={specWithData}
-                actions={false}
-                className="w-full"
-            />
+        <div className="w-full bg-white p-4 rounded-lg shadow-sm border border-brand-sage/20 space-y-8">
+            <div className="w-full">
+                <VegaEmbed
+                    spec={chart1Spec}
+                    actions={false}
+                    className="w-full"
+                />
+            </div>
+            <div className="w-full border-t border-brand-sage/10 pt-8">
+                <VegaEmbed
+                    spec={chart2Spec}
+                    actions={false}
+                    className="w-full"
+                />
+            </div>
             {/* Debug info */}
             <div className="text-xs text-gray-400 mt-2">
                 Loaded {data.length} records.
